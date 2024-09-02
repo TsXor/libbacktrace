@@ -36,7 +36,11 @@ POSSIBILITY OF SUCH DAMAGE.  */
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#ifdef _MSC_VER
+#include <io.h>
+#else
 #include <unistd.h>
+#endif
 
 #include "backtrace.h"
 #include "internal.h"

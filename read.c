@@ -35,7 +35,13 @@ POSSIBILITY OF SUCH DAMAGE.  */
 #include <errno.h>
 #include <stdlib.h>
 #include <sys/types.h>
+#ifdef _MSC_VER
+#include <io.h>
+#include <basetsd.h>
+typedef SSIZE_T ssize_t;
+#else
 #include <unistd.h>
+#endif
 
 #include "backtrace.h"
 #include "internal.h"

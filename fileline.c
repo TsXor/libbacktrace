@@ -37,7 +37,11 @@ POSSIBILITY OF SUCH DAMAGE.  */
 #include <errno.h>
 #include <fcntl.h>
 #include <stdlib.h>
+#ifdef _MSC_VER
+#include <process.h>
+#else
 #include <unistd.h>
+#endif
 
 #if defined (HAVE_KERN_PROC_ARGS) || defined (HAVE_KERN_PROC)
 #include <sys/sysctl.h>
